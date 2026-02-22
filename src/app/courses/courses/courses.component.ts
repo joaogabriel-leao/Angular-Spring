@@ -19,13 +19,13 @@ export class CoursesComponent implements OnInit {
 
   constructor(
     private coursesService : CoursesService,
-    public dialog: MatDialog  
+    public dialog: MatDialog   
   ) { 
      // this.coursesService = new CoursesService();
     this.courses$ = this.coursesService.list()
     .pipe(
         catchError(error => {
-          this.onError("Erro ao carregar cursos");
+          this.onError("Erro ao carregar cursos"); 
           return of([])
         })
     ); 
